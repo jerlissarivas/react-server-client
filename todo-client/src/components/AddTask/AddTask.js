@@ -14,7 +14,7 @@ class AddTask extends Component {
         axios
             .post("http://localhost:3001/api/add-task", this.state)
             .then(newlyCreatedTaskFromAPI => {
-                console.log({ newlyCreatedTaskFromAPI });
+                // console.log({ newlyCreatedTaskFromAPI });
 
                 this.props.updateState();
                 this.setState({ title: "", description: "", complete: false });

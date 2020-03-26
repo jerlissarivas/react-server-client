@@ -4,7 +4,6 @@ const Task = require("../../models/Task");
 
 // POST route to add a task (Create)
 router.post("/add-task", (req, res) => {
-    console.log({ theBody: req.body });
     Task.create(req.body)
         .then(newlyCreatedTask => {
             res.status(200).json(newlyCreatedTask);
@@ -14,7 +13,6 @@ router.post("/add-task", (req, res) => {
 
 // GET route to get all the tasks (Read)
 router.get("/get-tasks", (req, res) => {
-    console.log("Getting all tasks");
     Task.find()
         .then(allTasksFromDB => {
             console.log({ allTasksFromDB });
